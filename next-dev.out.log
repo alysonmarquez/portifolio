@@ -1,0 +1,20 @@
+
+> alyson-marquez-premium-portfolio@1.0.0 dev
+> next dev -p 3001
+
+   ▲ Next.js 15.5.18
+   - Local:        http://localhost:3001
+   - Network:      http://172.20.176.1:3001
+
+ ✓ Starting...
+ ✓ Ready in 3s
+ ○ Compiling / ...
+ ✓ Compiled / in 10.5s (1444 modules)
+ GET / 200 in 147ms
+ GET / 200 in 342ms
+ ✓ Compiled in 4.3s (673 modules)
+ ✓ Compiled in 664ms (673 modules)
+ ✓ Compiled in 6.1s (673 modules)
+ ✓ Compiled in 634ms (673 modules)
+ ✓ Compiled in 216ms (673 modules)
+ ✓ Compiled in 4.6s (209 modules)
