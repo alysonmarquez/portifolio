@@ -128,6 +128,139 @@ if (statsSection) {
     statsObserver.observe(statsSection);
 }
 
+// Portfolio cards enrichment and filters
+const projectProfiles = {
+    "Resource IT Marquez": {
+        category: "Freelance Services",
+        filters: "frontend automation ai",
+        tags: ["HTML", "CSS", "JavaScript"],
+        linkLabel: "Live Demo"
+    },
+    "Analisador de Currículos Tech": {
+        category: "AI Tool",
+        filters: "ai automation frontend",
+        tags: ["AI", "JavaScript", "UX"],
+        linkLabel: "GitHub"
+    },
+    "Atende.AI": {
+        category: "Customer Service SaaS",
+        filters: "saas automation ai backend",
+        tags: ["Python", "Docker", "n8n", "SQL"],
+        linkLabel: "GitHub"
+    },
+    "MediaFlow": {
+        category: "Publishing SaaS",
+        filters: "saas backend automation",
+        tags: ["Next.js", "TypeScript", "Prisma", "OAuth"],
+        linkLabel: "GitHub"
+    },
+    "Shopee Affiliate Bot": {
+        category: "Affiliate Automation",
+        filters: "automation backend",
+        tags: ["Node.js", "Telegram API", "GitHub Actions"],
+        linkLabel: "GitHub"
+    },
+    "Chess Competition": {
+        category: "Competitive Platform",
+        filters: "frontend backend",
+        tags: ["React", "NestJS", "Socket.IO", "Redis"],
+        linkLabel: "GitHub"
+    },
+    "Clinic Management System": {
+        category: "Clinic Operations",
+        filters: "frontend automation backend",
+        tags: ["React", "Node.js", "WhatsApp", "CRM"],
+        linkLabel: "GitHub"
+    },
+    "MVP for challenges and game monitoring.": {
+        category: "Game Monitoring",
+        filters: "backend frontend",
+        tags: ["TypeScript", "Node.js", "PostgreSQL"],
+        linkLabel: "GitHub"
+    },
+    "Insert in database": {
+        category: "Workflow Backend",
+        filters: "backend automation",
+        tags: ["JavaScript", "SQL", "BPM"],
+        linkLabel: "GitHub"
+    },
+    "Process Automation": {
+        category: "Process Automation",
+        filters: "automation",
+        tags: ["BPM", "Automation", "Workflow"],
+        linkLabel: "View flow"
+    },
+    "JavaScript function for Period Validation": {
+        category: "Validation Utility",
+        filters: "frontend automation",
+        tags: ["JavaScript", "Validation"],
+        linkLabel: "GitHub"
+    },
+    "function to format fields": {
+        category: "Formatting Utility",
+        filters: "frontend automation",
+        tags: ["JavaScript", "Forms", "UX"],
+        linkLabel: "GitHub"
+    }
+};
+
+document.querySelectorAll('.portfolio-content .row').forEach(card => {
+    const title = card.querySelector('h5')?.textContent.trim();
+    const profile = projectProfiles[title];
+    const layer = card.querySelector('.layer');
+    const link = layer?.querySelector('a');
+
+    if (!profile || !layer) return;
+
+    card.dataset.category = profile.filters;
+
+    if (!layer.querySelector('.project-category')) {
+        const badge = document.createElement('span');
+        badge.className = 'project-category';
+        badge.textContent = profile.category;
+        layer.insertBefore(badge, layer.querySelector('h5'));
+    }
+
+    if (!layer.querySelector('.tech-stack')) {
+        const stack = document.createElement('div');
+        stack.className = 'tech-stack';
+        profile.tags.forEach(tag => {
+            const item = document.createElement('span');
+            item.textContent = tag;
+            stack.appendChild(item);
+        });
+        if (link) {
+            layer.insertBefore(stack, link);
+        } else {
+            layer.appendChild(stack);
+        }
+    }
+
+    if (link) {
+        const iconClass = profile.linkLabel === 'GitHub' ? 'bx bxl-github' : 'bx bx-link-external';
+        link.innerHTML = `${profile.linkLabel} <i class="${iconClass}"></i>`;
+        link.setAttribute('aria-label', `${profile.linkLabel} - ${title}`);
+    }
+});
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.portfolio-content .row');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach(item => item.classList.remove('active'));
+        button.classList.add('active');
+
+        projectCards.forEach(card => {
+            const categories = card.dataset.category || '';
+            const shouldShow = filter === 'all' || categories.split(' ').includes(filter);
+            card.classList.toggle('hide-project', !shouldShow);
+        });
+    });
+});
+
 // Progress bar
 window.addEventListener('scroll', () => {
     const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;

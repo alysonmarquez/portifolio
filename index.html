@@ -10,7 +10,7 @@
     <meta name="description" content="Portfolio de Alyson Marquez - Software Engineer &amp; AI specialist. Confira meus projetos, experiência e habilidades em desenvolvimento web, backend e automação.">
     <meta name="keywords" content="Software Engineer, Full Stack Developer, JavaScript, Python, .NET, AI, Desenvolvimento Web">
     <title>Portfolio Alyson Marquez - Software Engineer &amp; AI</title>
-    <link rel="stylesheet" href="css/style.css?v=20260710-contain-images">
+    <link rel="stylesheet" href="css/style.css?v=20260710-portfolio-redesign-2">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,6 +50,7 @@
                 <li><a href="#experience">Experiences</a></li>
                 <li><a href="#portfolio">Projects</a></li>
                 <li><a href="#services">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
 
@@ -78,9 +79,12 @@
                 </div>
                 <h1>Alyson Marquez</h1>
                 <h3>Software<span> Engineer</span> &amp; AI</h3>
+                <p class="hero-summary">I build web systems, backend services, automations and AI-powered workflows that turn business processes into reliable software.</p>
                 
                 <div class="button">
                     <a href="#portfolio" class="btn2"><span><i class="bx bx-play"></i></span>See my work</a>
+                    <a href="#contact" class="btn-outline"><i class="bx bx-send"></i> Contact me</a>
+                    <a href="https://github.com/alysonmarquez" target="_blank" class="btn-outline"><i class="bx bxl-github"></i> GitHub</a>
                 </div>
             </div>
         </div>
@@ -116,11 +120,12 @@
 
         <div class="about-text">
             <h2>About <span>Me</span></h2>
-            <h4>Just passionate about coding.</h4>
+            <h4>Software Engineer focused on practical, business-ready systems.</h4>
             <p>&bull; Graduated in Systems Analysis and Development.</p>
-            <p>&bull; 2 year experience</p>
-            <p>&bull; <a class="link" href="https://www.efset.org/cert/KjKPY3" target="_blank">B2 medium English Level</a></p>
-            <p>&bull; Studying Software Engineering and AI</p>
+            <p>&bull; 2 years of experience building web systems, automations and internal tools.</p>
+            <p>&bull; Strong focus on backend, data workflows, integrations and AI-assisted products.</p>
+            <p>&bull; <a class="link" href="https://www.efset.org/cert/KjKPY3" target="_blank">B2 English level</a></p>
+            <p>&bull; Studying Software Engineering and AI.</p>
 
             <div class="socials">
                 <a href="https://www.linkedin.com/in/alysonmarquez/" target="_blank" class="btn-socials"><span><i class="bx bxl-linkedin"></i></span></a>
@@ -187,7 +192,59 @@
     <!--portfolio section design-->
     <section class="portfolio" id="portfolio">
         <div class="main-text">
+            <p>Selected Work</p>
             <h2>Latest <span>Projects</span></h2>
+            <p class="section-intro">A selection of SaaS products, automation tools, backend workflows and AI-enabled systems I designed or built.</p>
+        </div>
+
+        <div class="featured-projects" aria-label="Featured projects">
+            <article class="featured-card">
+                <span class="project-category">Featured SaaS</span>
+                <h3>MediaFlow</h3>
+                <p>A content publishing MVP with authentication, video upload, dashboard metrics and YouTube OAuth publishing.</p>
+                <div class="tech-stack">
+                    <span>Next.js</span>
+                    <span>TypeScript</span>
+                    <span>Prisma</span>
+                    <span>PostgreSQL</span>
+                </div>
+                <a href="https://github.com/alysonmarquez/MediaFlow" target="_blank" class="project-link">View project <i class="bx bx-link-external"></i></a>
+            </article>
+
+            <article class="featured-card">
+                <span class="project-category">Featured System</span>
+                <h3>Clinic Management System</h3>
+                <p>Administrative workflow for clinics with patient queue controls, campaign selection and service channel management.</p>
+                <div class="tech-stack">
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>WhatsApp</span>
+                    <span>Automation</span>
+                </div>
+                <a href="https://github.com/alysonmarquez/Sistemas-de-gerenciamento-e-automa-o-para-clinicas" target="_blank" class="project-link">View project <i class="bx bx-link-external"></i></a>
+            </article>
+
+            <article class="featured-card">
+                <span class="project-category">Featured Platform</span>
+                <h3>Chess Competition</h3>
+                <p>Competitive chess platform concept with real-time matches, ranking, tournaments and anti-cheat architecture.</p>
+                <div class="tech-stack">
+                    <span>React</span>
+                    <span>NestJS</span>
+                    <span>Socket.IO</span>
+                    <span>Redis</span>
+                </div>
+                <a href="https://github.com/alysonmarquez/chess-competition" target="_blank" class="project-link">View project <i class="bx bx-link-external"></i></a>
+            </article>
+        </div>
+
+        <div class="portfolio-filters" aria-label="Project filters">
+            <button class="filter-btn active" type="button" data-filter="all">All</button>
+            <button class="filter-btn" type="button" data-filter="saas">SaaS</button>
+            <button class="filter-btn" type="button" data-filter="automation">Automation</button>
+            <button class="filter-btn" type="button" data-filter="backend">Backend</button>
+            <button class="filter-btn" type="button" data-filter="ai">AI</button>
+            <button class="filter-btn" type="button" data-filter="frontend">Frontend</button>
         </div>
 
         <div class="portfolio-content">
@@ -456,7 +513,7 @@
     </div>
 
     <!--custom js link-->
-    <script src="js/script.js"></script>
+    <script src="js/script.js?v=20260710-portfolio-redesign"></script>
 </body>
 
 </html>
